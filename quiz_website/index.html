@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Portal | VITAP</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="admin-login.html" class="admin-trigger" id="adminTrigger">NGC</a>
+
+  <header style="padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); background: var(--bg-secondary);">
+    <h1 style="font-size: 1.5rem; color: var(--text-primary);">Quiz Portal</h1>
+  </header>
+
+  <main style="max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+      Academic Quiz Platform
+    </h2>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+      Secure, proctored assessments for VITAP students.
+    </p>
+    <a href="login.html" class="btn btn-primary" style="text-decoration: none;">Student Login</a>
+  </main>
+
+  <!-- NGC link goes to admin-login.html -->
+  <script>
+    document.getElementById('adminTrigger').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = this.getAttribute('href') || 'admin-login.html';
+    });
+  </script>
+</body>
+</html>
