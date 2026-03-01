@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Quizzes | Quiz Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="admin-login.html" class="admin-trigger" id="adminTrigger">NGC</a>
+
+  <header style="padding: 1rem 2rem; border-bottom: 1px solid var(--border); background: var(--bg-secondary); display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="font-size: 1.25rem;">My Quizzes</h1>
+    <div>
+      <span id="userName" style="color: var(--text-secondary); margin-right: 1rem;"></span>
+      <a href="index.html" class="btn btn-secondary" style="text-decoration: none;" id="logoutBtn">Logout</a>
+    </div>
+  </header>
+
+  <main style="max-width: 720px; margin: 2rem auto; padding: 0 1.5rem;">
+    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Select a quiz to attempt. You can attempt each quiz only once unless an admin resets your attempt.</p>
+    <div id="quizzesList"></div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/user-dashboard.js"></script>
+</body>
+</html>

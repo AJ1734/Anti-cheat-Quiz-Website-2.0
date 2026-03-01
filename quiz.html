@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Quiz Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header style="padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--bg-secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+    <span id="quizTitle" style="font-weight: 600;">Quiz</span>
+    <div class="quiz-timer" id="quizTimer">--:--</div>
+  </header>
+
+  <main style="max-width: 720px; margin: 0 auto; padding: 1.5rem;" id="quizMain">
+    <div id="loading">Loading...</div>
+    <div id="questionsWrap" class="hidden"></div>
+    <div class="mt-2" id="submitWrap">
+      <button type="button" class="btn btn-primary" id="submitQuizBtn">Submit Quiz</button>
+    </div>
+  </main>
+
+  <!-- Warning modals (one per cheat type) -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h3 id="modalTitle">Warning</h3>
+      <p id="modalBody"></p>
+      <button type="button" class="btn btn-primary" id="modalOk">OK</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/anti-cheat.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

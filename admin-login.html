@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Quiz Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header style="padding: 1rem 2rem; border-bottom: 1px solid var(--border); background: var(--bg-secondary);">
+    <a href="index.html" style="color: var(--text-primary); text-decoration: none;">← Back</a>
+  </header>
+
+  <main style="max-width: 400px; margin: 4rem auto; padding: 0 1.5rem;">
+    <h1 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Admin Login</h1>
+    <div id="adminError" class="hidden" style="padding: 0.75rem; background: rgba(239,68,68,0.2); border: 1px solid var(--danger); border-radius: 8px; color: var(--danger); margin-bottom: 1rem;"></div>
+    <form id="adminForm" class="card">
+      <div class="form-group">
+        <label for="adminName">Name</label>
+        <input type="text" id="adminName" required placeholder="Admin name">
+      </div>
+      <div class="form-group">
+        <label for="adminPass">Password</label>
+        <input type="password" id="adminPass" required placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+    </form>
+  </main>
+
+  <script>
+    const ADMIN_NAME = 'adminngc';
+    const ADMIN_PASS = 'chocopie';
+
+    document.getElementById('adminForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('adminName').value.trim();
+      const pass = document.getElementById('adminPass').value;
+      const errEl = document.getElementById('adminError');
+      if (name === ADMIN_NAME && pass === ADMIN_PASS) {
+        sessionStorage.setItem('quiz_admin', '1');
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        errEl.textContent = 'Invalid credentials.';
+        errEl.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
